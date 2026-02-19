@@ -18,9 +18,18 @@
       const button=<button>Click</button>;
 
       const paragraph=<p>Hello I am Thirumalaivasan</p>;
+      //Javascript code inside HTML using {}
+      const div=
+      (
+        <div>
+            <button>Click</button>
+            <p>Hello I am Thirumalaivasan {2+3}</p> 
+        </div>
+      )
+      ;
       
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(paragraph);
+      ReactDOM.createRoot(container).render(div);
     </script>
   </body>
 </html>                                   
