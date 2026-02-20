@@ -18,24 +18,56 @@
        {
         return (
           <>
-            <input />
+            <input placeholder="Enter a Message to Chatbot" size="30"/>
             <button>Send</button>
           </>
         );
        }
 
-       const div=(
+       function ChatMessage(props)
+       {
+
+        const {message,sender}=props;
+        if(sender==='robot')
+       {
+        return(
+          <div>
+          <img src="robot.png" width="50" />
+          {message}
+          </div>
+        )
+       }
+
+       else
+       {
+        return(
+          <div>
+          {message}
+          <img src="user.png" width="50" />
+          </div>
+        )
+       }
+        
+       
+
+       }
+
+       
+
+       const app=(
         <>
-          <h1>Hello I am Thirumalaivasan Nagarajan</h1>
-          
+         
           <ChatInput />
-          <h1>Thank you</h1>
+          <ChatMessage message="Hello Chatbot" sender="user" />
+          <ChatMessage message="Hello! How can I help you?" sender="robot" />
+          <ChatMessage message="Please Provide the todays Date" sender="user" />
+          <ChatMessage message="Today is February 20" sender="robot" />
         </>
         
        );
       
        const container = document.querySelector('.js-container');
-       ReactDOM.createRoot(container).render(div);
+       ReactDOM.createRoot(container).render(app);
     </script>
   </body>
 </html>                                   
