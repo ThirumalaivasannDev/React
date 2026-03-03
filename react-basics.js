@@ -1,0 +1,1 @@
+console.log("I can succefully runned an javascript code outside browser");
